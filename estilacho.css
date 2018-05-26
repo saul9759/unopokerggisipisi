@@ -1,0 +1,60 @@
+
+@keyframes mostrarB {
+  from{
+    color:rgba(255, 255, 255, 0);
+    size:100%;
+  }
+  50%{
+    color: #FFFFFF;
+    size:500%;
+  }
+  to{
+    color:rgba(255, 255, 255, 0);
+    size:100%;
+  }
+}
+/*********************************************************************************************************************************
+------------------------------------Wolf Was here
+************************************************************************************************************************************/
+body{
+  background-image: url("img/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.Menu{
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.71);
+  width: 50%;
+  height: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+  align-items: center;
+  align-content: center;
+
+}
+.itext{
+  background:none;
+  border-style: none;
+  color: black;
+}
+.mensaje{
+  text-align: center;
+  animation-name: mostrarB;
+  animation-duration: 5s;
+  font-size: 500%;
+  color:rgba(255, 255, 255, 0);
+}
+.boton{
+  color: white;
+  border-radius: 5px;
+  background-color: red;
+  border-style: none;
+}
+.Juego{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3,33%);
+  grid-template-rows: repeat(3,33%);
+}
