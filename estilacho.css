@@ -66,6 +66,7 @@ body{
 }
 .flex > img {
   position: relative;
+    box-shadow: -10px 10px 18px #000000;
 }
 #imgdeck
 {
