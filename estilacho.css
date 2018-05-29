@@ -83,3 +83,23 @@ div > img:hover
 {
   z-index:1;
 }
+#mensaje
+{
+  position:relative;
+  top: 10%;
+  font-family: 'Bowlby One SC', cursive;
+  -webkit-text-fill-color:#FFFF00;
+  -webkit-text-stroke-color: #FE2E2E;
+  -webkit-text-stroke-width: 0.75px;
+  font-size: 30px;
+
+  margin-left: -80px;
+}
+#espacio
+{
+  width: 100%;
+  height: 205px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000000;
+  background: #000000;
+}

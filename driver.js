@@ -9,12 +9,19 @@ var cartasJ=[];
 var cartasM=[];
 var nJ=0;
 var nM=0;
+
+
 function overxd(e) {
   e.style="background:#F8B320;";
 }
+
+
+
 function outxd(e) {
   e.style="background:red;";
 }
+
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -32,6 +39,11 @@ function shuffle(array) {
   }
   return array;
 }
+
+
+
+
+
 function mezclarCartas(){
   var arrayCartas=new Array(52);
   var pos=0;
@@ -68,15 +80,11 @@ function mezclarCartas(){
   arrayCartas[pos++]="queen"+spades;
   arrayCartas[pos++]="king"+spades;
   return arrayMezclado=shuffle(arrayCartas);
-  /*
-  Mostrar la baraja barajeada xDDD
-  var gg="";
-  for(i=0;i<52;i++){
-    gg+=arrayMezclado[i]+'\n';
-  }
-  alert(gg);
-  */
 }
+
+
+
+
 function recogerCarta(deck,quien){
   if(quien=="J"){
     return cartasJ.push(deck.pop())-1;
@@ -84,6 +92,9 @@ function recogerCarta(deck,quien){
     return cartasM.push(deck.pop())-1;
   }
 }
+
+
+
 function agregarCartaA(deck,quien){
   if(quien=="J"){
     var divj=document.getElementById("cartasJ");
@@ -92,6 +103,7 @@ function agregarCartaA(deck,quien){
     nmage.setAttribute("src","img/"+cartasJ[srci]);
     nmage.setAttribute("height","150px");
     nmage.setAttribute("width","100px");
+    nmage.setAttribute("id",cartasJ[srci]);
     if(nJ != 0)//si no es la primera carta  de j tiene class
     {
       nmage.setAttribute("class","nivel");
@@ -105,7 +117,8 @@ function agregarCartaA(deck,quien){
     nmage.setAttribute("src","img/"+cartasM[srci]);
     nmage.setAttribute("height","150px");
     nmage.setAttribute("width","100px");
-    if(nM != 0)//si no es la primera carta  de j tiene class
+    nmage.setAttribute("id",cartasM[srci]);
+    if(nM != 0)//si no es la primera carta  de m tiene class
     {
       nmage.setAttribute("class","nivel");
     }
@@ -114,6 +127,33 @@ function agregarCartaA(deck,quien){
     divM.appendChild(nmage);
   }
 }
+
+function tirada(j,carta){
+  if (J="J") {
+    if (carta[0]==document.getElementById(ultima).src[0]) {
+      tirada("","");
+      return true;
+    }else if(carta.substr(1,7)===document.getElementById(ultima).src.substr(1,7)){
+      tirada("","");
+      return true;
+    }else if(document.getElementById(ultima).src=="" || document.getElementById(ultima).src==null){
+      tirada("","");
+      return true;
+    }else {
+      return false;
+    }
+  }else {
+    for (var i = 0; i < cartasM.length; i++) {
+      if(cartasM[i][0]==document.getElementById(ultima).src[0]){
+        break;
+      }
+    }
+
+  }
+}
+
+
+
 function iniciar(){
   if(document.getElementById("nombre").value!="" && document.getElementById("nombre").value!=null){
     nombre=document.getElementById("nombre").value;
@@ -121,7 +161,6 @@ function iniciar(){
     document.getElementById("bienvenido").style="display:none";
     document.getElementById("menu").style="display:none";
     document.getElementById("juego").style="display:grid";
-
     agregarCartaA(deck,"J");
     agregarCartaA(deck,"J");
     agregarCartaA(deck,"J");
@@ -130,17 +169,6 @@ function iniciar(){
     agregarCartaA(deck,"M");
     topeDeck=deck[45];
     document.getElementById("imgdeck").src="img/"+topeDeck;
-    /*
-    var divM=document.getElementById("cartasM");
-    var nmage=document.createElement("img");
-    nmage.src=recogerCarta(deck,"J");
-    divj.appendChild(nmage);
-    recogerCarta(deck,"J");
-    recogerCarta(deck,"J");
-    recogerCarta(deck,"J");
-    recogerCarta(deck,"M");
-    recogerCarta(deck,"M");
-    recogerCarta(deck,"M");*/
   }else{
     document.getElementById("nnom").style="display:block";
   }
